@@ -1,24 +1,60 @@
 body {
     background-image: url(../img/mainBgrd.jpg);
 }
+.jumbotron {
+    margin-bottom: 10px;
+    border: solid #faebd7 5px;
+    padding: 30px;
+    font-family: 'Lily Script One', cursive;
+    color: #311e0b;
+    background-image: linear-gradient(#5c3a1b, #b3743a);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ecc30d,
+       0 0 40px #ecc30d, 0 0 50px #ecc30d, 0 0 60px #ecc30d, 0 0 70px #ecc30d, 0 0 80px #9e8203;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ecc30d, 0 0 40px #ecc30d,
+       0 0 50px #ecc30d, 0 0 60px #ecc30d, 0 0 70px #ecc30d, 0 0 80px #ecc30d, 0 0 90px #ecc30d;
+    }
+}
 
 li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
-  }
-  
-  .label {
     font-weight: bold;
-  }
+  }  
   
-  .create-update-form {
+  #ca {
     padding: 5px;
     margin: 5px;
-    background: aqua;
-  }
-  
+    background: #faebd7;
+  }  
   .form-group {
     margin-bottom: 5px;
   }
+
+  .card {
+    border: solid #faebd7 5px;
+    background-color: #b3743a;
+}
+
+.card-title, label {
+    color: #311e0b;
+
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.btn {
+    margin-left: 5px;
+}
   
