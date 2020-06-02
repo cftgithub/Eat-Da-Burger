@@ -1,0 +1,79 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Eat Da Burger!</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <!-- Menu -->
+        <div class="col-xl-6 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Burger Menu</h5>
+                    <div class="card-text text-black-50">Choose a burger to devour!</div>
+                    <ul style="list-style-type:none" ;>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        <li>
+                            {{burger_name}}
+
+                            <button type="submit" class="devourStatus btn btn-primary btn-sm" data-id="{{id}}" data-eaten="true">
+                                Devour It!
+                            </button>
+                        </li>
+
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Devoured -->
+        <div class="col-xl-6 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Devoured Burgers!</h5>
+                    <div class="card-text text-black-50">Add burger back to menu or delete it from list</div>
+                    <ul style="list-style-type:none" ;>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <li>
+                            {{burger_name}}
+
+                            <button type="submit" class="devourStatus btn btn-primary btn-sm" data-id="{{id}}" data-eaten="false">
+                                Add to Menu.
+                            </button>
+
+                            <button type="submit" class="deleteBurger btn btn-secondary btn-sm" data-id="{{this.id}}">Delete!</button>
+                        </li>
+
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card border-0 shadow">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Create a New Burger!</h5>
+                    {{!-- <div class="card-text text-black-50">Add a burger you would like to devour.</div> --}}
+
+                    <form class="create-form">
+                        <div class="row justify-content-center">
+                            <div class="form-group col-md-6 col-md-offset-3 align-center">
+                                <label for="ca">Add a burger you would like to devour.</label>
+                                <input type="text" class="form-control text-center" id="ca" name="name"
+                                    placeholder="Enter Burger Name Here">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

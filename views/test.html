@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+
+  <title>Eat Da Burger</title>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/assets/js/burgers.js"></script>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Eat Da Burger!</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- Menu -->
+      <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Burger Menu</h5>
+            <div class="card-text text-black-50">Click to devour a burger</div>
+            <ul>
+              {{#each burgers}}
+              {{#unless devoured}}
+              <li>
+                {{burger_name}}
+
+                <button class="devourStatus" data-id="{{id}}" data-eaten="true">
+                  Devour It!
+                </button>
+              </li>
+
+              {{/unless}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Devoured -->
+      <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Devoured Burgers!</h5>
+            <div class="card-text text-black-50">Click to add burger back to menu or delete it from list</div>
+            <ul>
+              {{#each burgers}}
+              {{#if devoured}}
+              <li>
+                {{burger_name}}
+
+                <button class="devourStatus" data-id="{{id}}" data-eaten="false">
+                  Add This Burger to Menu.
+                </button>
+
+                <button class="deleteBurger" data-id="{{this.id}}">DELETE!</button>
+              </li>
+
+              {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</body>
+
+</html>
